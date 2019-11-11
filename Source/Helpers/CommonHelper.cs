@@ -1,29 +1,39 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using ColossalFramework.UI;
-using ColossalFramework.Plugins;
-
-//===========================================================================================================
-//=== This part of code is helping in tedious tasks for example: in-game console messages, spliting, etc. ===
-//===========================================================================================================
-
 namespace GeodataLoader.Source.Helpers
 {
+    //====================================================
+    //=== Klasa odpowiedzialna za tworzenie wiadomoœci ===
+    //----------------------------------------------------
+    //========== Class responsible for messages ==========
+    //====================================================
+
+    // wykonane przez: / made by:
+    // jaggi
     public static class CommonHelpers
     {
+        // stwórz prost¹ wiadomoœæ / create simple message
         public static void Log(string message)
         {
-            // Create simple in-game console message
-            UnityEngine.Debug.Log(message);
+            // ró¿ne opcje wysy³ania wiadomoœci / different sending options
+            UnityEngine.Debug.Log(message); 
+            //Console.WriteLine(message);
             //DebugOutputPanel.AddMessage(PluginManager.MessageType.Message, message);
         }
     }
 
+    //============================================
+    //=== Klasa odpowiedzialna za rozdzielanie ===
+    //--------------------------------------------
+    //====== Class responsible for spliting ======
+    //============================================
+
+    // wykonane przez: / made by:
+    // jaggi
     public static class EnumerableExtension
     {
-        // Spliting to list
+        // rozdzielanie listy na mniejsze listy / spliting list to smaller lists
         public static IEnumerable<T[]> Split<T>(this IEnumerable<T> enumerable, int size)
         {
             var count = 0;

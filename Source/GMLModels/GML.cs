@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿//=== Prosty interfejs / Simple interface ===
 
 namespace GeodataLoader.Source.GMLModels
 {

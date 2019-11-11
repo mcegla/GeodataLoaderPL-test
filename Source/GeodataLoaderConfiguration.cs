@@ -1,21 +1,33 @@
-﻿namespace GeodataLoader//.Source
+﻿using System.Globalization;
+using UnityEngine;
+
+//============================================================================
+//=== Część kodu odpowiedzialna za tworzenie i przechowywanie konfiguracji ===
+//----------------------------------------------------------------------------
+//=== Part of the code responsible for configuration creation and storage  ===
+//============================================================================
+
+// bazuje na samouczku użytkownika forum simtropolis boformer: / based on simtropolis forum user boformer tutorial:
+//https://community.simtropolis.com/forums/topic/73487-modding-tutorial-2-road-tree-replacer/
+
+namespace GeodataLoader.Source
 {
-    // Default configuration path
+    // standardowa ścieżka dla pliku konfiguracyjnego / default configuration file path
     [ConfigurationPath("GeodataLoader.xml")]
     public class GeodataLoaderConfiguration
     {
-        // Default configuration for setings XML file
-        public string inputCenterX { get; set; } = @"560730.55";
-        public string inputCenterY { get; set; } = @"576278.95";
-        public string BDOT10k { get; set; } = @"C:\Users\DELL\Desktop\MGR\Zuromin\BDOT 10k\mazowieckie_pow_zurominski_1437\PL.PZGiK.330.1437\BDOT10K\";
-        public string NMT { get; set; } = @"";
-        public string Budynki3D { get; set; } = @"";
+        // standardowa konfiguracja ustawień dla plików / default setings configuration for files
+        public string inputCenterX { get; set; } = @""; // X obszaru w układzie PUWG1992 / area X in PUWG1992 coordinate system
+        public string inputCenterY { get; set; } = @""; // Y obszaru w układzie PUWG1992 / area Y in PUWG1992 coordinate system
+        public string BDOT10k { get; set; } = @""; // ścieżka do folderu z plikami .xml(gml) / path to folder containing .xml(gml) files
+        public string DEM { get; set; } = @""; // ścieżka do folderu z plikami ASCII / path to folder containing ASCII files
 
+        // parsowanie podanych współrzędnych do liczb i wektora / parsing input coordinates to floats and vector
         public float ParsedCenterX
         {
             get
             {
-                return float.TryParse(inputCenterX, out var res) ? res : 0f;
+                return float.TryParse(inputCenterX, System.Globalization.NumberStyles.Any, CultureInfo.InvariantCulture, out var res) ? res : 0f;
             }
         }
 
@@ -23,13 +35,23 @@
         {
             get
             {
-                return float.TryParse(inputCenterY, out var res) ? res : 0f;
+                return float.TryParse(inputCenterY, System.Globalization.NumberStyles.Any, CultureInfo.InvariantCulture, out var res) ? res : 0f;
             }
         }
 
-        // List of .gml files endings that will be considerd: *{ ending}.xml
+        public Vector2 ParsedCenterXY
+        {
+            get { return new Vector2(ParsedCenterX, ParsedCenterY); }
+        }
+
+        public static readonly int DEMRange = (17296 / 2);
+        public static readonly int DEMRangepx = 1081;
+
+        // lista końcówek plików .xml(gml), które zostaną uwzględnione przy wczytywaniu: *{końcówka}.xml
+        //------------------------------------------------------------------------------------
+        // list of .xml(gml) files endings that will be considerd while loading: *{ending}.xml
         public static readonly string[] gmlFilesEnding =
-{
+        {
             "SWRS_L",
             "SWKN_L",
             "SWRM_L",

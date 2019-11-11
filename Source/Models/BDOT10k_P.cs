@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 using GeodataLoader.Source.Helpers;
 
-//===========================================================================================
-//=== This part of code is a modified BDOT10k model for parsing OIPR(xkod) point features ===
-//===========================================================================================
+//======================================================================
+//=== Ta część kodu przechowuje model danych o charakterze punktowym ===
+//----------------------------------------------------------------------
+//======== This part of code contains model for point-type data ========
+//======================================================================
+
+// wykonane przez: / made by:
+// jaggi
 
 namespace GeodataLoader.Source.Models
 {

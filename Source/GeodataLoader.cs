@@ -1,17 +1,27 @@
-﻿using System;
-using System.IO;
-//using System.Linq;
-//using System.Collections.Generic;
-using ICities;
+﻿using ICities;
 using UnityEngine;
-using ColossalFramework;
 using ColossalFramework.UI;
-using ColossalFramework.Plugins;
 using GeodataLoader.Source.Helpers;
+using GeodataLoader.Source.Factories;
 
-//=====================================
-//=== This is main part of the code ===
-//=====================================
+//============================================================================================
+//=== Główna część kodu, odpowiedzialna za tworzenie interfejsu i odwołanie do pozostałych ===
+//--------------------------------------------------------------------------------------------
+//======= Main part of the code, responsible for GUI creation and calls to other parts =======
+//============================================================================================
+
+// posklajane przez: / glued together by: 
+// Mateusz "mcegla" Cegiełka & Radosław "jaggi" Jagiełło
+
+// kod źródłowy innych modyfikacji wykorzystany przy tworzeniu tego kodu 
+//---------------------------------------------------------------------- 
+// source code of other mods used to create the code:
+//https://community.simtropolis.com/forums/topic/73388-mod-development-tutorialsdocumentation/
+//https://github.com/brunophilipe/OverLayer
+//https://github.com/rdiekema/Cities-Skylines-Mapper/tree/master/Mapper
+//https://github.com/tomarus/cs-terraingen/blob/master/TerrainGen.cs
+//https://github.com/yenyang/rainfall/blob/master/Source/Hydrology.cs
+// i inne, opisane później / and other, described later
 
 namespace GeodataLoader.Source
 {
@@ -20,70 +30,59 @@ namespace GeodataLoader.Source
         public string Name => "GeodataLoader";
         public string Description => "It might load geospatial data someday"; 
 
-        //private static readonly string[] OptionLabels =
-        //{
-        //    "Labelka opcji1"
-        //};
-
-        //private static readonly string[] OptionValues =
-        //{
-        //    "Opcja1"
-        //};
-
-        // Sets up a settings user interface
+        // stworzenie interfejsu ustawień / sets up a settings user interface
         public void OnSettingsUI(UIHelperBase helper)
         {
-            //=== Load the configuration ===
+            // ładowanie konfiguracji / load the configuration
             GeodataLoaderConfiguration config = Configuration<GeodataLoaderConfiguration>.Load();
 
-            //var sciezka = @"D:\PW\Praca mgr\Zuromin\BDOT 10k\mazowieckie_pow_zurominski_1437\PL.PZGiK.330.1437\BDOT10K\PL.PZGiK.330.1437__OT_ADMS_P.xml";
-
-            //=== Creating UI element for CityGML folder path ===
-            helper.AddTextfield("Insert center X:", config.inputCenterX, delegate { }, sub =>
+            // stworzenie elementu interfejsu do wprowadzania współrzędnej X centurm obszaru
+            //--------------------------------------------------
+            // creating UI element for center X coordinate input 
+            helper.AddTextfield("Insert center X [.]:", config.inputCenterX, delegate { }, sub =>
             {
-                //=== Change config value and save config ===
+                // zmień wartość w konfiguracji i zapisz / change config value and save config ===
                 config.inputCenterX = sub;
                 Configuration<GeodataLoaderConfiguration>.Save();
             });
 
-            //=== Creating UI element for CityGML folder path ===
-            helper.AddTextfield("Insert center Y:", config.inputCenterY, delegate { }, sub =>
+            // stworzenie elementu interfejsu do wprowadzania współrzędnej Y centurm obszaru
+            //--------------------------------------------------
+            // creating UI element for center Y coordinate input 
+            helper.AddTextfield("Insert center Y [.]:", config.inputCenterY, delegate { }, sub =>
             {
-                //=== Change config value and save config ===
+                // zmień wartość w konfiguracji i zapisz / change config value and save config ===
                 config.inputCenterY = sub;
                 Configuration<GeodataLoaderConfiguration>.Save();
             });
 
-            //=== Creating UI element for BDOT10k folder path ===
+            // stworzenie elementu interfejsu do wprowadzania ścieżki do folderu z danymi BDOT10k
+            //--------------------------------------------------
+            // creating UI element for BDOT10k folder path input
             helper.AddTextfield("BDOT10k path:", config.BDOT10k, delegate { }, sub =>
             {
-                //=== Change config value and save config ===
+                // zmień wartość w konfiguracji i zapisz / change config value and save config ===
                 config.BDOT10k = sub;
                 Configuration<GeodataLoaderConfiguration>.Save();
             });
 
-            //=== Creating UI element for NMT folder path ===
-            helper.AddTextfield("NMT path:", config.NMT, delegate { }, sub =>
+            // stworzenie elementu interfejsu do wprowadzania ścieżki do folderu z danymi NMT
+            //--------------------------------------------------
+            // creating UI element for DEM folder path input
+            helper.AddTextfield("NMT path:", config.DEM, delegate { }, sub =>
             {
-                //=== Change config value and save config ===
-                config.NMT = sub;
-                Configuration<GeodataLoaderConfiguration>.Save();
-            });
-
-            //=== Creating UI element for CityGML folder path ===
-            helper.AddTextfield("Budynki3D path:", config.Budynki3D, delegate { }, sub =>
-            {
-                //=== Change config value and save config ===
-                config.Budynki3D = sub;
+                // zmień wartość w konfiguracji i zapisz / change config value and save config ===
+                config.DEM = sub;
                 Configuration<GeodataLoaderConfiguration>.Save();
             });
         }
     }
 
-
+    // tworzenie przycisku w dużej mierze pochodzi z: / button creation largely comes from:
+    //https://github.com/brunophilipe/OverLayer/blob/master/OverLayer/OverLayer.cs
     public class GeodataLoaderExtension : LoadingExtensionBase//, GeodataLoader.Delegate
     {
-        // Inicialization of mbutton type and sprite
+        // zainicjalizowanie przycisku i jego obrazka / initialization of button type and sprite
         private UIButton gdButton;
         private UISprite gdButtonImage;
         private LoadMode modeU;
@@ -92,24 +91,24 @@ namespace GeodataLoader.Source
             if (mode != LoadMode.LoadGame && mode != LoadMode.NewGame && mode != LoadMode.NewMap && mode != LoadMode.LoadMap)
                 return;
             modeU = mode;
-            // Gets a current UI view
+            // zwraca obecny obraz interfejsu / gets a current UI view
             var currentUIView = UIView.GetAView();
-            // Creates button in current view
+            // tworzy przycisk w obecnym obrazie / creates button in current view
             gdButton = (UIButton)currentUIView.AddUIComponent(typeof(UIButton));
-            // Adds a sprite to created button
+            // dodaje obrazek do stworzonego przycisku / adds a sprite to created button
             gdButtonImage = (UISprite)gdButton.AddUIComponent(typeof(UISprite));
 
-            // Set the text to show on the button tooltip.
+            // ustawia tekst do pojawienia się na podpowiedzi przycisku / set the text to show on the button tooltip.
             gdButton.tooltip = "GeodataLoader Switch";
             gdButton.isTooltipLocalized = false;
             gdButton.RefreshTooltip();
             gdButton.spritePadding = new RectOffset();
 
-            // Set the button dimensions.
+            // ustawia wymiary przycisku / set the button dimensions.
             gdButton.width = 36;
             gdButton.height = 36;
 
-            // Set the lock image
+            // ustawia obrazek globusa / set the globe image
             gdButtonImage.spriteName = "ToolbarIconZoomOutGlobeHovered";
             gdButtonImage.position = new Vector3(18, -18);
             gdButtonImage.width = 32;
@@ -122,58 +121,82 @@ namespace GeodataLoader.Source
                 CommonHelpers.Log("Could not get reference material!");
                 return;
             }
-
-            // Enable button sounds.
+            
+            // włącza dźwięki przycisku / anable button sounds.
             gdButton.playAudioEvents = true;
 
-            // Place the button.
-            gdButton.transformPosition = new Vector3(-1.11f, 0.98f);
+            // umieszcza przycisk / place the button.
+            gdButton.transformPosition = new Vector3(-0.50f, 1.02f);//(-1.11f, 0.98f);
 
-            // Respond to button click.
-            //gdButton.eventMouseUp += ButtonMouseUp;
+            int i = 0;
             gdButton.eventClicked += (component, click) =>
             {
                 CommonHelpers.Log("clicked");
-                //CreateNet.Start(0, 0, 100, 100, "Basic Road");
-                //CreateBuilding.Start();
-                //CreateTree.Start();
-                BDOT10kToObj bDOT10kToObj = new BDOT10kToObj();
-                bDOT10kToObj.BUIT_P();
-                bDOT10kToObj.BUWT_P();
-                bDOT10kToObj.BUZT_P();
-                bDOT10kToObj.KUHU_P();
-                bDOT10kToObj.OIPR_L();
-                bDOT10kToObj.OIPR_P();
-                bDOT10kToObj.OIKM_P();
-                bDOT10kToObj.OIOR_P();
-                //gdButton.Hide();
+                
+                // część, która w przyszłości moze odpowiadać za usuwanie obiektów po ponownym kliknięciu
+                //---------------------------------------------------------------------------------------
+                // part that in the future might be responsible for deleting objects after another button click
+
+                //{
+                //TerrainFactory.FlattenTerrain();
+                //BuildingFactory.DeleteAllBuildings();
+                //PropFactory.DeleteAllProps();
+                //TreeFactory.DeleteAllTrees();
+                //WaterFactory.DeleteAllSources();
+                //NetFactory.DelAllSegmentsNew_ToTest();
+                //NetFactory.DeleteAllSegments(); //not working
+                //NetFactory.DeleteAllNodes();
+                //PropFactory.temp = 0;
+                //TreeFactory.temp = 0;
+                //BuildingFactory.temp = 0;
+                //}
+
+
+                if (i == 0)
+                {
+                    WaterFactory.setSeaLevelTo0();
+                    TerrainFactory.FlattenTerrain();
+                    TerrainFactory.LoadDEM();
+                    
+                    // ustawia obrazek globusa / set the globe image
+                    gdButtonImage.spriteName = "ToolbarIconZoomOutGlobe";
+
+                    if (gdButtonImage.atlas == null || gdButtonImage.atlas.material == null)
+                    {
+                        CommonHelpers.Log("Could not get reference material!");
+                        return;
+                    }
+                    i = 1;
+                }
+                else if (i == 1)
+                {
+
+                    // główna klasa ładująca obiekty / main object loading class
+                    BDOT10kToObj bDOT10kToObj = new BDOT10kToObj();
+                    bDOT10kToObj.BDOT10k();
+                    // liczniki / counters
+                    CommonHelpers.Log($"Prop count: {PropFactory.temp}/{PropManager.MAX_PROP_COUNT}");
+                    CommonHelpers.Log($"Tree count: {TreeFactory.temp}/{TreeManager.MAX_TREE_COUNT}");
+                    CommonHelpers.Log($"Building count: {BuildingFactory.temp}/{BuildingManager.MAX_BUILDING_COUNT}");
+                    CommonHelpers.Log($"Node count: {NetFactoryBase.tempN}/{NetManager.MAX_NODE_COUNT}");
+                    CommonHelpers.Log($"Segment count: {NetFactoryBase.tempS}/{NetManager.MAX_SEGMENT_COUNT}");
+                    gdButton.Hide();
+                }
             };
-
-            gdButton.Show();
-
+            //gdButton.Show();
             CommonHelpers.Log("Loaded");
         }
 
-        //private void ButtonMouseUp(UIComponent component, UIMouseEventParameter eventParam)
-        //{
-        //    OIPR01.Start();
-        //}
-
+        // przy wyjściu z poziomu pozbądź sie przycików / on level unloading destroy created buttons
         public override void OnLevelUnloading()
         {
-            if (modeU != LoadMode.LoadGame && modeU != LoadMode.NewGame && modeU != LoadMode.NewMap && modeU != LoadMode.LoadMap) //CZY TEN DOUBLECHECK POTRZEBNY?
+            if (modeU != LoadMode.LoadGame && modeU != LoadMode.NewGame && modeU != LoadMode.NewMap && modeU != LoadMode.LoadMap)
                 return;
             if (gdButton != null)
             {
                 UIButton.Destroy(gdButton);
                 UISprite.Destroy(gdButtonImage);
             }
-
         }
-
     }
 }
-
-//WHAT DO U WANT?
-//IN > folders, center XY
-//OUT > on button click x3 -> load: bdot10k!!! / terrain / buildings3d - later

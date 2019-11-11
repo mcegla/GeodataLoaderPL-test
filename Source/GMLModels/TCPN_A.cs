@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
+//===!!! Wygenerowano automatycznie z plku .xml(gml) / Generated automatically from .xml(gml) file !!!===
+//=======================================================================================================
+//===== Jeden z modeli wygenerowanych z plików .xml(gml), zamknięty w klasie z dodanym interfejsem ======
+//-------------------------------------------------------------------------------------------------------
+//====== One of many models generated from .xml(gml) files, enclosed in class with interface added ======
+//=======================================================================================================
 
 namespace GeodataLoader.Source.GMLModels
 {
