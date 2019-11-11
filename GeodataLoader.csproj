@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8AE24B4F-4B3D-474A-84F6-FFF61763CF6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GeodataLoader</RootNamespace>
+    <AssemblyName>GeodataLoader</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ColossalManaged">
+      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ColossalManaged.dll</HintPath>
+    </Reference>
+    <Reference Include="ICities">
+      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\BDOT10kToObj.cs" />
+    <Compile Include="Source\GMLModels\ADJA_A.cs" />
+    <Compile Include="Source\GMLModels\ADMS_A.cs" />
+    <Compile Include="Source\GMLModels\ADMS_P.cs" />
+    <Compile Include="Source\GMLModels\BUBD_A.cs" />
+    <Compile Include="Source\GMLModels\BUCM_A.cs" />
+    <Compile Include="Source\GMLModels\BUHD_A.cs" />
+    <Compile Include="Source\GMLModels\BUHD_L.cs" />
+    <Compile Include="Source\GMLModels\BUHD_P.cs" />
+    <Compile Include="Source\GMLModels\BUIB_A.cs" />
+    <Compile Include="Source\GMLModels\BUIB_L.cs" />
+    <Compile Include="Source\GMLModels\BUIN_L.cs" />
+    <Compile Include="Source\GMLModels\BUIT_A.cs" />
+    <Compile Include="Source\GMLModels\BUIT_P.cs" />
+    <Compile Include="Source\GMLModels\BUSP_A.cs" />
+    <Compile Include="Source\GMLModels\BUSP_L.cs" />
+    <Compile Include="Source\GMLModels\BUTR_L.cs" />
+    <Compile Include="Source\GMLModels\BUTR_P.cs" />
+    <Compile Include="Source\GMLModels\BUUO_L.cs" />
+    <Compile Include="Source\GMLModels\BUWT_A.cs" />
+    <Compile Include="Source\GMLModels\BUWT_P.cs" />
+    <Compile Include="Source\GMLModels\BUZM_L.cs" />
+    <Compile Include="Source\GMLModels\BUZT_A.cs" />
+    <Compile Include="Source\GMLModels\BUZT_P.cs" />
+    <Compile Include="Source\GMLModels\GML.cs" />
+    <Compile Include="Source\GMLModels\KUHO_A.cs" />
+    <Compile Include="Source\GMLModels\KUHU_A.cs" />
+    <Compile Include="Source\GMLModels\KUHU_P.cs" />
+    <Compile Include="Source\GMLModels\KUIK_A.cs" />
+    <Compile Include="Source\GMLModels\KUKO_A.cs" />
+    <Compile Include="Source\GMLModels\KUKO_P.cs" />
+    <Compile Include="Source\GMLModels\KUMN_A.cs" />
+    <Compile Include="Source\GMLModels\KUOS_A.cs" />
+    <Compile Include="Source\GMLModels\KUOZ_A.cs" />
+    <Compile Include="Source\GMLModels\KUPG_A.cs" />
+    <Compile Include="Source\GMLModels\KUPG_P.cs" />
+    <Compile Include="Source\GMLModels\KUSC_A.cs" />
+    <Compile Include="Source\GMLModels\KUSK_A.cs" />
+    <Compile Include="Source\GMLModels\KUZA_A.cs" />
+    <Compile Include="Source\GMLModels\OIKM_A.cs" />
+    <Compile Include="Source\GMLModels\OIKM_L.cs" />
+    <Compile Include="Source\GMLModels\OIKM_P.cs" />
+    <Compile Include="Source\GMLModels\OIMK_A.cs" />
+    <Compile Include="Source\GMLModels\OIOR_A.cs" />
+    <Compile Include="Source\GMLModels\OIOR_L.cs" />
+    <Compile Include="Source\GMLModels\OIOR_P.cs" />
+    <Compile Include="Source\GMLModels\OIPR_L.cs" />
+    <Compile Include="Source\GMLModels\OISZ_A.cs" />
+    <Compile Include="Source\GMLModels\PTGN_A.cs" />
+    <Compile Include="Source\GMLModels\PTKM_A.cs" />
+    <Compile Include="Source\GMLModels\PTLZ_A.cs" />
+    <Compile Include="Source\GMLModels\PTNZ_A.cs" />
+    <Compile Include="Source\GMLModels\PTPL_A.cs" />
+    <Compile Include="Source\GMLModels\PTRK_A.cs" />
+    <Compile Include="Source\GMLModels\PTSO_A.cs" />
+    <Compile Include="Source\GMLModels\PTTR_A.cs" />
+    <Compile Include="Source\GMLModels\PTUT_A.cs" />
+    <Compile Include="Source\GMLModels\PTWP_A.cs" />
+    <Compile Include="Source\GMLModels\PTWZ_A.cs" />
+    <Compile Include="Source\GMLModels\PTZB_A.cs" />
+    <Compile Include="Source\GMLModels\SKDR_L.cs" />
+    <Compile Include="Source\GMLModels\SKJZ_L.cs" />
+    <Compile Include="Source\GMLModels\SKPP_L.cs" />
+    <Compile Include="Source\GMLModels\SKRP_L.cs" />
+    <Compile Include="Source\GMLModels\SKRW_P.cs" />
+    <Compile Include="Source\GMLModels\SKTR_L.cs" />
+    <Compile Include="Source\GMLModels\SULN_L.cs" />
+    <Compile Include="Source\GMLModels\SUPR_L.cs" />
+    <Compile Include="Source\GMLModels\SWKN_L.cs" />
+    <Compile Include="Source\GMLModels\SWRM_L.cs" />
+    <Compile Include="Source\GMLModels\SWRS_L.cs" />
+    <Compile Include="Source\GMLModels\TCON_A.cs" />
+    <Compile Include="Source\GMLModels\TCPK_A.cs" />
+    <Compile Include="Source\GMLModels\TCPN_A.cs" />
+    <Compile Include="Source\GMLModels\TCRZ_A.cs" />
+    <Compile Include="Source\Helpers\CommonHelper.cs" />
+    <Compile Include="Source\Coordinates.cs" />
+    <Compile Include="Source\Configuration.cs" />
+    <Compile Include="Source\GeodataLoader.cs" />
+    <Compile Include="Source\GeodataLoaderConfiguration.cs" />
+    <Compile Include="Source\Helpers\FileFinder.cs" />
+    <Compile Include="Source\Models\BDOT10k.cs" />
+    <Compile Include="Source\Models\BDOT10k_AL.cs" />
+    <Compile Include="Source\Models\BDOT10k_P.cs" />
+    <Compile Include="Source\GMLModels\OIPR_P.cs" />
+    <Compile Include="Source\Parsers\BDOT10kParser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source\Converters\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"
+del "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)\$(TargetFileName)"
+xcopy /y "$(TargetPath)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
