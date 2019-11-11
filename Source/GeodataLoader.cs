@@ -69,7 +69,7 @@ namespace GeodataLoader.Source
             // stworzenie elementu interfejsu do wprowadzania ścieżki do folderu z danymi NMT
             //--------------------------------------------------
             // creating UI element for DEM folder path input
-            helper.AddTextfield("NMT path:", config.DEM, delegate { }, sub =>
+            helper.AddTextfield("DEM path:", config.DEM, delegate { }, sub =>
             {
                 // zmień wartość w konfiguracji i zapisz / change config value and save config ===
                 config.DEM = sub;
