@@ -33,30 +33,130 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="ColossalManaged">
-      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ColossalManaged.dll</HintPath>
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ColossalManaged.dll</HintPath>
     </Reference>
     <Reference Include="ICities">
-      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Source\BDOT10kToObj.cs" />
+    <Compile Include="Source\BDOT10kTranslator\TCRZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\TCPN_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\TCPK_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\TCON_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SWRS_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SWRM_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SWKN_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SUPR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SULN_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKTR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKRW_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKRP_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKPP_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTZB_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTWZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTWP_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTUT_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTTR_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTSO_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTRK_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTPL_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTNZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTKM_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTGN_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OISZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIOR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIOR_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIMK_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIKM_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIKM_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUZA_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUSK_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUSC_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUPG_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUPG_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUOZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUOS_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUMN_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUKO_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUKO_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUIK_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUHU_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUHO_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUZT_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUZM_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUWT_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUUO_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUTR_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUTR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUSP_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUSP_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUIT_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUIN_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUIB_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUIB_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUHD_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUHD_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUHD_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUCM_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUBD_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\ADMS_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\ADMS_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\ADJA_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUIT_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUWT_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\KUHU_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\BUZT_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIKM_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIOR_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIPR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\OIPR_P_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\PTLZ_A_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKDR_L_T.cs" />
+    <Compile Include="Source\BDOT10kTranslator\SKJZ_L_T.cs" />
+    <Compile Include="Source\Dictionaries\BUBD_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUHD_L_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUIB_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUUO_L_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUTR_L_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUIT_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUSP_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUWT_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\BUZT_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\OIKM_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\OIOR_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\OIPR_L_Dic.cs" />
+    <Compile Include="Source\Dictionaries\OIPR_P_Dic.cs" />
+    <Compile Include="Source\Dictionaries\PTUT_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\PTRK_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\PTLZ_A_Dic.cs" />
+    <Compile Include="Source\Dictionaries\SKJZ_L_Dic.cs" />
+    <Compile Include="Source\Dictionaries\SKRP_L_Dic.cs" />
+    <Compile Include="Source\Factories\BuildingFactory.cs" />
+    <Compile Include="Source\Factories\ResourceFactory.cs" />
+    <Compile Include="Source\Helpers\MultiKeyDictionaries.cs" />
+    <Compile Include="Source\Logic\RoadSegmentFinder.cs" />
+    <Compile Include="Source\Models\Segment.cs" />
+    <Compile Include="Source\Factories\WaterFactory.cs" />
+    <Compile Include="Source\Factories\TerrainFactory.cs" />
     <Compile Include="Source\GMLModels\ADJA_A.cs" />
     <Compile Include="Source\GMLModels\ADMS_A.cs" />
     <Compile Include="Source\GMLModels\ADMS_P.cs" />
@@ -132,20 +232,25 @@
     <Compile Include="Source\GMLModels\TCPN_A.cs" />
     <Compile Include="Source\GMLModels\TCRZ_A.cs" />
     <Compile Include="Source\Helpers\CommonHelper.cs" />
-    <Compile Include="Source\Coordinates.cs" />
+    <Compile Include="Source\Logic\Coordinates.cs" />
     <Compile Include="Source\Configuration.cs" />
     <Compile Include="Source\GeodataLoader.cs" />
     <Compile Include="Source\GeodataLoaderConfiguration.cs" />
+    <Compile Include="Source\Logic\DouglasPointsReduction.cs" />
     <Compile Include="Source\Helpers\FileFinder.cs" />
+    <Compile Include="Source\Logic\PointInLine.cs" />
+    <Compile Include="Source\Logic\PointInPoly.cs" />
     <Compile Include="Source\Models\BDOT10k.cs" />
     <Compile Include="Source\Models\BDOT10k_AL.cs" />
     <Compile Include="Source\Models\BDOT10k_P.cs" />
     <Compile Include="Source\GMLModels\OIPR_P.cs" />
+    <Compile Include="Source\Factories\NetFactory.cs" />
+    <Compile Include="Source\Parsers\ASCII_GRID_Parser.cs" />
     <Compile Include="Source\Parsers\BDOT10kParser.cs" />
+    <Compile Include="Source\Factories\PropFactory.cs" />
+    <Compile Include="Source\Factories\TreeFactory.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Source\Converters\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"
