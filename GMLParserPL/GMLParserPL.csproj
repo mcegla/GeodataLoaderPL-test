@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72AA675F-92C0-44A5-BED6-15DF0CF390A0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GMLParserPL</RootNamespace>
+    <AssemblyName>GMLParserPL</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICities">
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\ICities.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\Gry\Steam\steamapps\common\Cities_Skylines\Cities_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\JSONSerializer.cs" />
+    <Compile Include="GMLParserPL.cs" />
+    <Compile Include="Logic\AdditionalPointsCreation.cs" />
+    <Compile Include="Logic\Calculations.cs" />
+    <Compile Include="Logic\CoordinatesCalc.cs" />
+    <Compile Include="Logic\DouglasPointsReduction.cs" />
+    <Compile Include="Logic\EnumerableExtension.cs" />
+    <Compile Include="Logic\FileFinder.cs" />
+    <Compile Include="Logic\RoadSegmentFinder.cs" />
+    <Compile Include="Models\MultiKeyDictionary.cs" />
+    <Compile Include="Models\Segment.cs" />
+    <Compile Include="ObjectTypeEnum.cs" />
+    <Compile Include="Parsers\GMLParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translators\AreaToPointsTranslator.cs" />
+    <Compile Include="Translators\BDOT\BUBD_A.cs" />
+    <Compile Include="Translators\BDOT\BUCM_A.cs" />
+    <Compile Include="Translators\BDOT\BUHD_L.cs" />
+    <Compile Include="Translators\BDOT\BUIB_A.cs" />
+    <Compile Include="Translators\BDOT\BUIB_L.cs" />
+    <Compile Include="Translators\BDOT\BUIT_A.cs" />
+    <Compile Include="Translators\BDOT\BUIT_P.cs" />
+    <Compile Include="Translators\BDOT\BUSP_A.cs" />
+    <Compile Include="Translators\BDOT\BUSP_L.cs" />
+    <Compile Include="Translators\BDOT\BUTR_L.cs" />
+    <Compile Include="Translators\BDOT\BUTR_P.cs" />
+    <Compile Include="Translators\BDOT\BUUO_L.cs" />
+    <Compile Include="Translators\BDOT\BUWT_A.cs" />
+    <Compile Include="Translators\BDOT\BUWT_P.cs" />
+    <Compile Include="Translators\BDOT\BUZT_A.cs" />
+    <Compile Include="Translators\BDOT\BUZT_P.cs" />
+    <Compile Include="Translators\BDOT\OIKM_A.cs" />
+    <Compile Include="Translators\BDOT\OIKM_L.cs" />
+    <Compile Include="Translators\BDOT\OIKM_P.cs" />
+    <Compile Include="Translators\BDOT\OIMK_A.cs" />
+    <Compile Include="Translators\BDOT\OIOR_A.cs" />
+    <Compile Include="Translators\BDOT\OIOR_L.cs" />
+    <Compile Include="Translators\BDOT\OIOR_P.cs" />
+    <Compile Include="Translators\BDOT\OIPR_L.cs" />
+    <Compile Include="Translators\BDOT\OIPR_P.cs" />
+    <Compile Include="Translators\BDOT\OISZ_A.cs" />
+    <Compile Include="Translators\BDOT\PTGN_A.cs" />
+    <Compile Include="Translators\BDOT\PTLZ_A.cs" />
+    <Compile Include="Translators\BDOT\PTNZ_A.cs" />
+    <Compile Include="Translators\BDOT\PTPL_A.cs" />
+    <Compile Include="Translators\BDOT\PTRK_A.cs" />
+    <Compile Include="Translators\BDOT\PTSO_A.cs" />
+    <Compile Include="Translators\BDOT\PTTR_A.cs" />
+    <Compile Include="Translators\BDOT\PTUT_A.cs" />
+    <Compile Include="Translators\BDOT\PTWP_A.cs" />
+    <Compile Include="Translators\BDOT\PTWZ_A.cs" />
+    <Compile Include="Translators\BDOT\SKJZ_L.cs" />
+    <Compile Include="Translators\BDOT\SKRP_L.cs" />
+    <Compile Include="Translators\BDOT\SKTR_L.cs" />
+    <Compile Include="Translators\BDOT\SULN_L.cs" />
+    <Compile Include="Translators\BDOT\SUPR_L.cs" />
+    <Compile Include="Translators\BDOT\SWKN_L.cs" />
+    <Compile Include="Translators\BPTranslator.cs" />
+    <Compile Include="Translators\BuildingTranslator.cs" />
+    <Compile Include="Translators\NetTranslator.cs" />
+    <Compile Include="Translators\NPTranslator.cs" />
+    <Compile Include="Translators\StandardTranslator.cs" />
+    <Compile Include="Translators\Translator.cs" />
+    <Compile Include="Translators\TranslatorInitiator.cs" />
+    <Compile Include="Translators\TranslatorUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EmbeddedResource Include="GMLParserPL.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"
+del "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)\$(TargetFileName)"
+xcopy /y "$(TargetPath)" "%25LOCALAPPDATA%25\Colossal Order\Cities_Skylines\Addons\Mods\$(SolutionName)"</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions />
+</Project>
