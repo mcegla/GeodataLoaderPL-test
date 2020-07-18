@@ -7,8 +7,6 @@ namespace GMLParserPL.Logic
     internal static class Calculations
     {
         /// <summary>
-        ///     Odnajdywanie wartości najmniejszej i największej w ramach zestawu wektorów
-        ///     <para />
         ///     Finding max and min value for vectors set
         /// </summary>
         /// <param name="vectors"></param>
@@ -34,8 +32,6 @@ namespace GMLParserPL.Logic
         }
 
         /// <summary>
-        ///     Algorytm sprawdzający położenie punktu w poligonie
-        ///     <para />
         ///     Algorithm checking if point is placed inside of the polygon
         /// </summary>
         /// <param name="vertices"></param>
@@ -56,8 +52,6 @@ namespace GMLParserPL.Logic
         }
 
         /// <summary>
-        ///     Algorytm obliczający pole poligou ze współrzędnych
-        ///     <para />
         ///     Algorithm calculating polygon area from coordinates
         /// </summary>
         /// <param name="polygon"></param>
@@ -81,8 +75,6 @@ namespace GMLParserPL.Logic
         }
 
         /// <summary>
-        ///     Proste obliczanie środka ciężkości
-        ///     <para />
         ///     Simple center of gravity calculation
         /// </summary>
         /// <param name="polygon"></param>
@@ -102,8 +94,6 @@ namespace GMLParserPL.Logic
         }
 
         /// <summary>
-        ///     Obliczanie iloczynu wektorowego
-        ///     <para />
         ///     Vector product calculation
         /// </summary>
         /// <param name="segmentP1"></param>
@@ -117,8 +107,6 @@ namespace GMLParserPL.Logic
         }
 
         /// <summary>
-        ///     Obliczanie azymutu
-        ///     <para />
         ///     Azimuth calucation
         /// </summary>
         /// <param name="point1"></param>
@@ -128,7 +116,7 @@ namespace GMLParserPL.Logic
         {
             double dX = point2.X - point1.X;
             double dY = point2.Y - point1.Y;
-            // azymut + pi ze względu na skręt obszaru gry / azimuth + pi because of game area rotation
+            // azimuth + pi because of game area rotation
             double phi = Math.Atan2(dY, dX) + Math.PI;
             return (float)phi;
         }

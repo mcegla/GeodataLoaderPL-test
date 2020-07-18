@@ -6,7 +6,7 @@ namespace GMLParserPL.Logic
 {
     public static class EnumerableExtension
     {
-        // rozdzielanie listy na mniejsze listy / spliting list to smaller lists
+        // spliting list to smaller lists
         public static IEnumerable<T[]> Split<T>(this IEnumerable<T> enumerable, int size)
         {
             var count = 0;

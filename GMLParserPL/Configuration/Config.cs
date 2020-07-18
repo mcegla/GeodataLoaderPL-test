@@ -4,9 +4,12 @@ using System.Collections.Generic;
 
 namespace GMLParserPL.Configuration
 {
+    /// <summary>
+    ///     Configuration model, contains separate objects dictionaries for each supported BDOT10k class and object type
+    /// </summary>
     public class Config
     {
-        public Config() // dla porównywarki z MultiKeyDictionaries / for comparer from MultiKeyDictionaries
+        public Config() // for comparer from MultiKeyDictionaries
         {
             BUBD_A_MKDObj.K2Comparer = (v1, v2, value) => Math.Abs(value - v1) > Math.Abs(value - v2) ? v2 : v1;
             BUBD_A_MKDObj.K3Comparer = (v1, v2, value) => Math.Abs(value - v1) > Math.Abs(value - v2) ? v2 : v1;

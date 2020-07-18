@@ -8,10 +8,13 @@ using System.Linq;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     basic translator for BDOT10k classes composed of linear (net) and point objects
+    /// </summary>
     internal abstract class NPTranslator : Translator
     {
-        private int toleranceDP; //3 looks good, but might cause troubles with intersections
-        protected int propSize = 4; //4 - not all props are the same!!!!
+        private int toleranceDP;
+        protected int propSize = 4; // 4 - not all props are the same!!!!
         protected bool isNet;
 
         public NPTranslator(string bdotClass, string filePath, Config config) : base(bdotClass, filePath, config)
@@ -69,7 +72,7 @@ namespace GMLParserPL.Translators
             if (!objectAsDict.ContainsKey("posList"))
                 return null;
             var lineList = (List<string>)objectAsDict["posList"];
-            //extrior (GML name) is the only one in this case
+            // extrior (GML name) is the only one in this case
             var exteriorLine = lineList.First();
 
             if (string.IsNullOrEmpty(exteriorLine))

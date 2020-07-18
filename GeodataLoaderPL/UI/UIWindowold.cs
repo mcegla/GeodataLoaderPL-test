@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace GeodataLoaderPL.UI
 {
+    /// <summary>
+    ///     Main UI window controls
+    /// </summary>
     public class UIWindowold : UIPanel
     {
 

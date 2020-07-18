@@ -19,8 +19,6 @@ namespace GMLParserPL.Translators.BDOT
         }
 
         /// <summary>
-        ///     Prawie identyczna z pierwotną Net, override potrzebny ze względu na wykorzystanie dróg przez inne klasy
-        ///     <para />
         ///     Nearly identical to base Net, override needed because other classes use road segments
         /// </summary>
         /// <param name="objectAsDict"></param>
@@ -52,8 +50,6 @@ namespace GMLParserPL.Translators.BDOT
         {
             if (string.IsNullOrEmpty(file))
                 return null;
-            // Zakończenie P,L,A klasy BDOT10k odpowiada jej reprezentacji geometrycznej
-            //
             // The ending letter of BDOT10k class corresponds to its geometric representation
             List<string> GMLAttrWCoord = ParsedGMLAttr;
             if (bdotClass.EndsWith("P"))

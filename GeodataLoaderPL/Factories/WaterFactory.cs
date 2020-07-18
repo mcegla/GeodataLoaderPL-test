@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace GeodataLoaderPL.Factories
 {
+    /// <summary>
+    ///     Creates watersources and sets sea lvl to 0
+    /// </summary>
     public class WaterFactory
     {
         private static WaterSimulation _waterSimulation = Singleton<TerrainManager>.instance.WaterSimulation;
@@ -21,7 +24,7 @@ namespace GeodataLoaderPL.Factories
             WaterSource defaultSource = default(WaterSource);
             var z = Singleton<TerrainManager>.instance.SampleRawHeightSmoothWithWater(new Vector3(point.x, 0, point.y), false, 0f);
             var pos = new Vector3(point.x, z, point.y);
-            // ustawienia dla źródła / settings for source
+            // water source settings
             defaultSource.m_flow = flow;
             defaultSource.m_inputRate = inrate;
             defaultSource.m_outputRate = outrate;

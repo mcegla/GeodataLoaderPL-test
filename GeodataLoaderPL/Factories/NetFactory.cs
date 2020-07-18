@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace GeodataLoaderPL.Factories
 {
+    /// <summary>
+    ///     Uses in-game methods for net-type objects creation, includes skipping of repeated nodes in close distance
+    /// </summary>
     public class NetFactory
     {
         private readonly Dictionary<string, NetInfo> nets;

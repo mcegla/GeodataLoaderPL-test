@@ -23,8 +23,6 @@ namespace GMLParserPL.Translators.BDOT
         {
             if (string.IsNullOrEmpty(file))
                 return null;
-            // Zakończenie P,L,A klasy BDOT10k odpowiada jej reprezentacji geometrycznej
-            //
             // The ending letter of BDOT10k class corresponds to its geometric representation
             List<string> GMLAttrWCoord = ParsedGMLAttr;
             if (bdotClass.EndsWith("P"))

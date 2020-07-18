@@ -8,10 +8,13 @@ using System.Numerics;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     basic translator for BDOT10k classes composed of point (building type) objects
+    /// </summary>
     internal abstract class BuildingTranslator : Translator
     {
         private Vector2 currentPoint;
-        protected int pArea64; //Area using base of 64
+        protected int pArea64; // area using base of 64
 
 
         public BuildingTranslator(string bdotClass, string filePath, Config config) : base(bdotClass, filePath, config)
@@ -88,9 +91,7 @@ namespace GMLParserPL.Translators
         }
 
         /// <summary>
-        ///     W przypadku budynków chodzi głównie o kąt obrotu do drogi
-        ///     <para />
-        ///     I case of buildings the most important thing are angles to road segments
+        ///     In case of buildings the most important thing are angles to road segments
         /// </summary>
         /// <param name="objectAsDict"></param>
         /// <param name="point"></param>

@@ -3,7 +3,7 @@
 namespace GeodataLoaderPL
 {
     /// <summary>
-    ///     Mod main info
+    ///     Mod info
     /// </summary>
     public class GeodataLoaderPL : IUserMod
     {

@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 namespace ASCIIParserPL
 {
     // by jaggi
+    /// <summary>
+    ///     DEM name parsing
+    /// </summary>
     internal class ASCIIName
     {
         private static Vector2 GridMinPos = new Vector2(float.MaxValue, float.MaxValue);

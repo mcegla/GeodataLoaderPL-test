@@ -8,7 +8,7 @@ namespace GMLParserPL.Translators.BDOT
 {
     internal class SULN_L : NetTranslator
     {
-        private int toleranceDP; //3 looks good, but might cause troubles with intersections
+        private int toleranceDP; // 3 looks good, but might cause troubles with intersections
 
         public SULN_L(string bdotClass, string filePath, Config config) : base(bdotClass, filePath, config)
         {
@@ -16,8 +16,6 @@ namespace GMLParserPL.Translators.BDOT
         }
 
         /// <summary>
-        ///     Prawie identyczna z pierwotną, override potrzebny ze względu na wykorzystanie dróg przez inne klasy
-        ///     <para />
         ///     Nearly identical to base, override needed because other classes use road segments
         /// </summary>
         /// <param name="objectAsDict"></param>

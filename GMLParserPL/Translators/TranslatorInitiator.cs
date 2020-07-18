@@ -8,6 +8,9 @@ using System.Reflection;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     Main translating class, contains selection of the translated BDOT10k classes and initialization of the translators
+    /// </summary>
     internal class TranslatorInitiator
     {
         #region fields
@@ -20,14 +23,14 @@ namespace GMLParserPL.Translators
 
         internal static HashSet<Segment> RoadSegment { get; set; } = new HashSet<Segment> { };
         internal static HashSet<Segment> GridSegment { get; set; } = new HashSet<Segment> { };
-        internal static int ToleranceDP { get; } = 3; //3 looks good, but might cause troubles with intersections
+        internal static int ToleranceDP { get; } = 3; // 3 looks good, but might cause troubles with intersections
 
         internal TranslatorInitiator(string folderPath, Config config)
         {
             this.folderPath = folderPath;
             this.config = config;
             bdotClasses = config.BdotClassesUsed;
-            firstBdotClasses = new HashSet<string> { "SKJZ_L", "SULN_L" };
+            firstBdotClasses = new HashSet<string> { "SKJZ_L", "SULN_L" }; // main linear classes should be created before any other class
         }
 
 

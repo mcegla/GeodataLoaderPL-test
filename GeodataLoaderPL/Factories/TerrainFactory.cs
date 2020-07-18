@@ -3,6 +3,9 @@ using System.Collections;
 
 namespace GeodataLoaderPL.Factories
 {
+    /// <summary>
+    ///     Loades byte arrays, includes setting ground lvl to 0
+    /// </summary>
     public class TerrainFactory
     {
         public void FlattenTerrain()

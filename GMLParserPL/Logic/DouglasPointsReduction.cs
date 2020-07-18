@@ -6,8 +6,6 @@ using System.Numerics;
 namespace GMLParserPL.Logic
 {
     /// <summary>
-    ///     Klasa odpowiedzialna za implementacje algorytmu Douglas'a–Peucker'a
-    ///     <para />
     ///     Class responsible for implementation of Douglas–Peucker algorithm
     ///     <see cref="https://www.codeproject.com/Articles/18936/A-C-Implementation-of-Douglas-Peucker-Line-Appro"/>
     /// </summary>

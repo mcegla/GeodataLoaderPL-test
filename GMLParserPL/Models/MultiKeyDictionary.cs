@@ -4,8 +4,8 @@ using System.Linq;
 
 namespace GMLParserPL.Models
 {
-    // bazuje na: / based on:
-    //https://stackoverflow.com/questions/1171812/multi-key-dictionary-in-c
+    // based on:
+    // https://stackoverflow.com/questions/1171812/multi-key-dictionary-in-c
 
     // GetByKeyOrClosest - jaggi, 
     // Refactoring is needed

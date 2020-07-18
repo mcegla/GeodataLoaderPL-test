@@ -8,6 +8,9 @@ using System.Numerics;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     basic translator for BDOT10k classes composed of point objects
+    /// </summary>
     internal abstract class BPTranslator : Translator
     {
         private Vector2 currentPoint;
@@ -76,9 +79,7 @@ namespace GMLParserPL.Translators
         }
 
         /// <summary>
-        ///     W przypadku budynków jak i propów chodzi głównie o kąt obrotu do drogi
-        ///     <para />
-        ///     I case of buildings and props the most important thing are angles to road segments
+        ///     In case of buildings and props the most important thing are angles to road segments
         /// </summary>
         /// <param name="objectAsDict"></param>
         /// <param name="point"></param>

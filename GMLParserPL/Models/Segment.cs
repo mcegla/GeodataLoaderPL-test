@@ -4,6 +4,9 @@ using System.Numerics;
 namespace GMLParserPL.Models
 {
     // by jaggi
+    /// <summary>
+    ///     segment containing 2 vectors - points
+    /// </summary>
     internal struct Segment : IEquatable<Segment>
     {
         public Vector2 p1;

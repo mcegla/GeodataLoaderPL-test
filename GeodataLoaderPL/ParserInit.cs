@@ -9,6 +9,9 @@ using UnityEngine;
 
 namespace GeodataLoaderPL
 {
+    /// <summary>
+    ///     Responsible for parsing processes and factories initialization
+    /// </summary>
     public class ParserInit
     {
         private int timesNetUsed;
@@ -28,12 +31,13 @@ namespace GeodataLoaderPL
 
         internal string[] Arguments { get; set; } = new string[5]; // X,Y,AreaSideLength,TDBPath,DEMPath
 
+        // as base game doesn't contain a full System.XML.LINQ namespace and the .NET 4.8 is easier to work with,
+        // other external process was created for TDB parsing  
         internal void ProcessTDBExternally()
         {
 
             UnityEngine.Debug.Log(modDirectory);
             var psi = new ProcessStartInfo();
-            // !!! STEAM PATH CHECK NEEDED && CLEAR ARGS !!!
             psi.FileName = $"{modDirectory}GMLParserPL.exe";
             psi.CreateNoWindow = true;
             psi.RedirectStandardOutput = true;
@@ -73,10 +77,10 @@ namespace GeodataLoaderPL
             UnityEngine.Debug.Log($"Resources loaded/called: {waterFactory.Temp}/{timesWaterUsed}");
         }
 
+        // as DEM couldn't be transfered via pipes or MMF and was cousing troubles in async, another process was created
         internal void ProcessDEMExternally()
         {
             var psi = new ProcessStartInfo();
-            // !!! STEAM PATH CHECK NEEDED && CLEAR ARGS !!!
             psi.FileName = $"{modDirectory}ASCIIParserPL.exe";
             psi.CreateNoWindow = true;
             psi.RedirectStandardOutput = true;

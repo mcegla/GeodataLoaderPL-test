@@ -9,8 +9,6 @@ namespace GMLParserPL.Logic
     internal static class RoadSegmentFinder
     {
         /// <summary>
-        ///     Odległość do segmentu
-        ///     <para />
         ///     Distance to segment
         /// </summary>
         /// <see cref="https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment"/>

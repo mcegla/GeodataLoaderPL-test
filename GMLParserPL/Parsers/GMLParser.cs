@@ -7,8 +7,6 @@ using System.Xml.Linq;
 namespace GMLParserPL.Parsers
 {
     /// <summary>
-    ///     Główny parser zwraca listę obiektów o atrybutach zgodnych z tymi podanymi w liście
-    ///     <para />
     ///     Main parser returns objects list with attributes compatible with those from given list
     /// </summary>
     internal class GMLParser
@@ -72,7 +70,7 @@ namespace GMLParserPL.Parsers
 
         private XNamespace NamespaceCheck(string attributeToCheck)
         {
-            // To jedyne istotne atrybuty korzystające z przestrzeni nazw gml / those are the only important attributes using the gml namespace  
+            // those are the only important attributes using the gml namespace  
             if (attributeToCheck == "pos" || attributeToCheck == "posList")
                 return gml;
             else

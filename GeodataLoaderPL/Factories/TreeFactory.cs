@@ -9,6 +9,9 @@ namespace GeodataLoaderPL.Factories
     {
         public int Temp { get; private set; }
 
+        /// <summary>
+        ///     Uses in-game methods for trees creation
+        /// </summary>
         public TreeFactory()
         {
             Temp = 0;

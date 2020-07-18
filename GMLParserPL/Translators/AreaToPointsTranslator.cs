@@ -9,7 +9,9 @@ using System.Numerics;
 
 namespace GMLParserPL.Translators
 {
-
+    /// <summary>
+    ///     basic translator for BDOT10k classes composed of areas represented as point objects
+    /// </summary>
     internal abstract class AreaToPointsTranslator : Translator
     {
         protected float gridDist;
@@ -48,7 +50,6 @@ namespace GMLParserPL.Translators
 
         protected virtual HashSet<Vector2> GetPointsInArea(IDictionary<string, object> objectAsDict)
         {
-            //implement DP reduction?
             if (objectAsDict.ContainsKey("posList"))
             {
                 var lineList = (List<string>)objectAsDict["posList"];

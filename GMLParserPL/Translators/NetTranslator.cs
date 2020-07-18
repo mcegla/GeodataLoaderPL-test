@@ -7,9 +7,12 @@ using System.Linq;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     basic translator for BDOT10k classes composed of linear (net) objects
+    /// </summary>
     internal abstract class NetTranslator : Translator
     {
-        private int toleranceDP; //3 looks good, but might cause troubles with intersections
+        private int toleranceDP; // 3 looks good, but might cause troubles with intersections
         public NetTranslator(string bdotClass, string filePath, Config config) : base(bdotClass, filePath, config)
         {
             toleranceDP = TranslatorInitiator.ToleranceDP;
@@ -39,7 +42,7 @@ namespace GMLParserPL.Translators
             if (!objectAsDict.ContainsKey("posList"))
                 return null;
             var lineList = (List<string>)objectAsDict["posList"];
-            //extrior (GML name) is the only one in this case
+            // extrior (GML name) is the only one in this case
             var exteriorLine = lineList.First();
 
             if (string.IsNullOrEmpty(exteriorLine))

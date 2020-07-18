@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace GeodataLoaderPL.UI
 {
+    /// <summary>
+    ///     Main mod UI class, button and window creation
+    /// </summary>
     public class UIold : LoadingExtensionBase
     {
         GameObject buildingWindowGameObject;
@@ -73,7 +76,7 @@ namespace GeodataLoaderPL.UI
             }
         }
 
-        // przy wyjściu z poziomu pozbądź sie przycików / on level unloading destroy created buttons
+        // on level unloading destroy created buttons
         public override void OnLevelUnloading()
         {
             if (modeU != LoadMode.LoadGame && modeU != LoadMode.NewGame && modeU != LoadMode.NewMap && modeU != LoadMode.LoadMap)

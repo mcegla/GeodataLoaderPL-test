@@ -7,6 +7,9 @@ using System.Numerics;
 namespace ASCIIParserPL
 {
     // by jaggi
+    /// <summary>
+    ///     Parsed ASCII files selection, resampling and recalculation
+    /// </summary>
     public class ASCIITranslator
     {
         #region fields

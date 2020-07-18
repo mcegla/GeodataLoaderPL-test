@@ -34,7 +34,6 @@ namespace GMLParserPL.Translators.BDOT
 
         protected override HashSet<Vector2> GetPointsInArea(IDictionary<string, object> objectAsDict)
         {
-            //implement DP reduction?
             if (!objectAsDict.ContainsKey("posList"))
                 return null;
 

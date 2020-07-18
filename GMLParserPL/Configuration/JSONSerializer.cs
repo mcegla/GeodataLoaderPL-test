@@ -6,8 +6,6 @@ using System.Reflection;
 namespace GMLParserPL.Configuration
 {
     /// <summary>
-    ///     Prosty serializer bazujący na stworzonym przez użytkownika boformer z forum simtropolis
-    ///     <para />
     ///     This simple serializer is based on a sample created by user boformer from simtropolis forum
     /// </summary>
     /// <see cref="https://gist.githubusercontent.com/boformer/cb6840867c6febd25c8f/raw/a56159664b974be4b3e7d6625d08bc35b7a3f9a6/Configuration.cs"/>
@@ -22,7 +20,6 @@ namespace GMLParserPL.Configuration
             JsonSerializer serializer = new JsonSerializer();
             if (config == null)
             {
-                //JsonSerializer serializer = new JsonSerializer();
                 try
                 {
                     if (File.Exists(filePath))

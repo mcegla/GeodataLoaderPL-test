@@ -6,9 +6,7 @@ namespace ASCIIParserPL
 {
     // by jaggi
     /// <summary>
-    ///     Proces odpowiedzialny z import danych NMT z plików ASCII
-    ///     <para />
-    ///     Process resposible for import DEM data in ASCII format
+    ///     DEM import main class
     /// </summary>
     class ASCIIParserPL
     {

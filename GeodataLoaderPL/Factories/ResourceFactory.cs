@@ -3,6 +3,9 @@
 
 namespace GeodataLoaderPL.Factories
 {
+    /// <summary>
+    ///     Uses in-game NaturalResourceManager to set resources
+    /// </summary>
     class ResourceFactory
     {
         public int Temp { get; private set; }
@@ -14,6 +17,7 @@ namespace GeodataLoaderPL.Factories
         NaturalResourceManager _naturalRM = NaturalResourceManager.instance;
         public void CreateResource(Vector2 Point, NaturalResourceManager.Resource resource)
         {
+            // Recalculated resource grid
             var y = (int)((Point.x + 8608) / 33.625); // pixel y; 8608=(17280-32*2)/2; 33.625=17216/512
             var x = (int)((Point.y + 8608) / 33.625); // pixel x; 8608=(17280-32*2)/2; 33.625=17216/512
             if (x < 512 && y < 512 && x >= 0 && y >= 0)

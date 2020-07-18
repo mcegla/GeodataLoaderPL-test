@@ -6,6 +6,9 @@ namespace GeodataLoaderPL.Factories
 {
     public class BuildingFactory
     {
+        /// <summary>
+        ///     Uses in-game methods for buildings creation
+        /// </summary>
         public int Temp { get; private set; }
 
         public BuildingFactory()
@@ -40,7 +43,7 @@ namespace GeodataLoaderPL.Factories
             var coordZ = Singleton<TerrainManager>.instance.SampleRawHeightSmoothWithWater(new Vector3(point.x, 0, point.y), false, 0f);
             BuildingManager.instance.CreateBuilding(out buildingNum, ref SimulationManager.instance.m_randomizer,
                 building, new Vector3(point.x, coordZ, point.y), angle, length, Singleton<SimulationManager>.instance.m_currentBuildIndex);
-            Singleton<SimulationManager>.instance.m_currentBuildIndex += 1u; //HMM
+            Singleton<SimulationManager>.instance.m_currentBuildIndex += 1u;
             yield return null;
         }
     }

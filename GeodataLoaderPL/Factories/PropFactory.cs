@@ -6,6 +6,9 @@ namespace GeodataLoaderPL.Factories
 {
     public class PropFactory
     {
+        /// <summary>
+        ///     Uses in-game methods for props creation
+        /// </summary>
         private readonly Dictionary<string, PropInfo> props;
 
         public int Temp { get; private set; }

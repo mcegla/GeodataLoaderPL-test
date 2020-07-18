@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace ASCIIParserPL
 {
+    /// <summary>
+    ///     for .asc files
+    /// </summary>
     internal class FileFinder
     {
         #region fields

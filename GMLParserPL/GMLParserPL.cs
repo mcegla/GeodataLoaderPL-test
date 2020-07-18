@@ -7,9 +7,7 @@ using System.Numerics;
 namespace GMLParserPL
 {
     /// <summary>
-    ///     Aplikacja odpowiedzialna za przeliczanie i tłumaczenie BDOT10k i NMT do obiektów gry
-    ///     <para />
-    ///     Application responsible for recalculating and translating BDOT10k and DEM to game objects
+    ///     Process / console application responsible for recalculating and translating BDOT10k and DEM to game objects
     /// </summary>
     class GMLParserPL
     {

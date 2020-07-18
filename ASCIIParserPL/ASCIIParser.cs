@@ -6,6 +6,9 @@ using System.Text;
 namespace ASCIIParserPL
 {
     // by jaggi
+    /// <summary>
+    ///     Main DEM parser
+    /// </summary>
     public class ASCIIParser
     {
         private ASCIIHeader _header;

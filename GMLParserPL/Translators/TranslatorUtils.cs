@@ -9,6 +9,9 @@ using System.Text;
 
 namespace GMLParserPL.Translators
 {
+    /// <summary>
+    ///     Useful translating methods
+    /// </summary>
     internal static class TranslatorUtils
     {
         internal static bool IsNaNVector2(Vector2 point)

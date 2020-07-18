@@ -22,8 +22,6 @@ namespace GMLParserPL.Logic
         public static bool IsInRange(Vector2 pointRealXY)
             => IsInRange(pointRealXY, GMLParserPL.SideLength);
 
-        //Mniejszy obszar dla surowców, o około 28-32m z każdej strony
-        //---------------------------------------------------------
         //Smaller area for resources - around 28-32m from each side
         public static bool IsInResourceRange(Vector2 pointRealXY)
             => IsInRange(pointRealXY, GMLParserPL.SideLength - 32);

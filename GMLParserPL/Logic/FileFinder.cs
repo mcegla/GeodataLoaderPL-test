@@ -5,6 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace GMLParserPL.Logic
 {
+    /// <summary>
+    ///     for .xml files
+    /// </summary>
     internal class FileFinder
     {
         private static string fileNameFormatXML = @"*{0}.xml";
